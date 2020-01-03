@@ -6,5 +6,7 @@ function member(a = '', lat = []) {
 		return a === first || member(a, rest);
 	}
 }
-const ret = member('a', ['b', 'a']);
-console.log(ret);
+// const ret = member('a', ['b', 'a']);
+// console.log(ret);
+
+module.exports = member;

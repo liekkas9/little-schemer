@@ -9,5 +9,7 @@ function lat(arr = []) {
   }
 }
 
-const ret = lat(["1", "2"]);
-console.log(ret);
+// const ret = lat(["1", "2"]);
+// console.log(ret);
+
+module.exports = lat;
