@@ -2,15 +2,12 @@
 function lat(arr = []) {
   if (!arr.length) {
     return true;
-  }
-  const [first, ...rest] = arr;
-  const isStr = typeof first === "string";
-  if (isStr) {
-    return lat(rest);
   } else {
-    return false;
+    const [first, ...rest] = arr;
+    const isStr = typeof first === "string";
+    return isStr && lat(rest);
   }
 }
 
-const ret = lat(["1", 2]);
+const ret = lat(["1", "2"]);
 console.log(ret);

@@ -1,13 +1,10 @@
 function member(a = '', lat = []) {
 	if (!lat.length) {
 		return false;
-	}
-	const [first, ...rest] = lat;
-	if (a === first) {
-		return true;
 	} else {
-		return member(a, rest);
+		const [first, ...rest] = lat;
+		return a === first || member(a, rest);
 	}
 }
-const ret = member('a', ['b', 'c']);
+const ret = member('a', ['b', 'a']);
 console.log(ret);
