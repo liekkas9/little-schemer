@@ -7,15 +7,15 @@ function rember(a = '', lat = []) {
 			if (first === a) {
 				return rember(a, rest);
 			} else {
-				return [first, rember(a, rest)];
+				return [first, ...rember(a, rest)];
 			}
 		} else {
-			return [...rember(a, first), ...rember(a, rest)];
+			return [rember(a, first), ...rember(a, rest)];
 		}
 	}
 }
 
 module.exports = rember;
 
-const ret = rember('a', ['b', ['a']]);
+const ret = rember('a', ['s', 'b', ['a', 'c', ['a', 's']]]);
 console.log(ret);
