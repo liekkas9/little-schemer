@@ -1,7 +1,7 @@
 // 递归替换掉全部单词
 function subst(newVal = '', oldVal = '', arr = []) {
 	if (!arr.length) {
-		return arr;
+		return [];
 	} else {
 		const [first, ...rest] = arr;
 		if (typeof first === 'string') {
@@ -11,7 +11,10 @@ function subst(newVal = '', oldVal = '', arr = []) {
 				return [first, ...subst(newVal, oldVal, rest)];
 			}
 		} else {
-			return [subst(newVal, oldVal, first), subst(newVal, oldVal, rest)];
+			return [
+				subst(newVal, oldVal, first),
+				...subst(newVal, oldVal, rest)
+			];
 		}
 	}
 }
