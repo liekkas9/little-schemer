@@ -1,6 +1,3 @@
-const lat = require('./lat');
-const member = require('./member');
-
 function rember(a = '', lat = []) {
 	if (!lat.length) {
 		return lat;
