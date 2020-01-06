@@ -6,11 +6,11 @@ const member = require('./member');
 //!!!以后涉及到相互的地方，注意拆分为两个不同的只问题，切记！！！！
 function interSect(arr1 = [], arr2 = []) {
 	if (!arr1.length) {
-		return false;
+		return [];
 	} else {
 		const [first, ...rest] = arr1;
 		if (member(first, arr2)) {
-			return true;
+			return [first, ...interSect(rest, arr2)];
 		} else {
 			return interSect(rest, arr2);
 		}
@@ -18,6 +18,8 @@ function interSect(arr1 = [], arr2 = []) {
 }
 
 const testData1 = ['stewed', 'tomatoes', 'and', 'macarani'];
-const testData2 = ['cheese'];
+const testData2 = ['macarani', 'and', 'cheese'];
 
-console.log(interSect(testData1, testData2));
+// console.log(interSect(testData1, testData2));
+
+module.exports = interSect;
