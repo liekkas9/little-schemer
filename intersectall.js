@@ -7,6 +7,8 @@ function interSectAll(arr = []) {
 		return first;
 	} else {
 		const [first, ...rest] = arr;
+		// 这里 rest 在纵向上少了一维，所以继续处理 rest 才是对的。
+		// 本来就是的：但是被二维的思路给干扰了。。
 		return interSect(first, interSectAll(rest));
 	}
 }
