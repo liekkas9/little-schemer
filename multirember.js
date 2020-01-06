@@ -17,5 +17,5 @@ function rember(a = '', lat = []) {
 
 module.exports = rember;
 
-const ret = rember('a', ['s', 'b', ['a', 'c', ['a', 's']]]);
-console.log(ret);
+// const ret = rember('a', ['s', 'b', ['a', 'c', ['a', 's']]]);
+// console.log(ret);
