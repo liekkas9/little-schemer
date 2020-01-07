@@ -1,4 +1,4 @@
-const subSet = require('./subset');
+const subSet = require('../subset');
 
 // 这个思路太骚了！
 // 本能想法，一个个对比。。但须知 set 是木有顺序的
