@@ -18,4 +18,8 @@ const list = (...args) => {
   return [first, list(...rest)];
 };
 
-console.log(JSON.stringify(list(1, 2, 3, 4, 5)));
+module.exports = {
+  head,
+  tail,
+  list,
+};
